@@ -5,7 +5,7 @@ public static void main(String[] args) {
 	Duck James = new Duck("Pizza",5);
 	James.quack();
 	James.waddle();
-	James.favoriteFood;
-	James.numberOfFriends
+	Panda name = new Panda("Bamboo","Jeff");
+	
 }
 }
