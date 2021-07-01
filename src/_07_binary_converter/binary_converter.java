@@ -1,12 +1,26 @@
 package _07_binary_converter;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public class binary_converter {
+public class binary_converter implements ActionListener {
 	void setup() {
-String invalid = JOptionPane.showInputDialog("Enter an 8 bit binary string.");
 
-String bob=convert(invalid);
+JFrame Panda1 = new JFrame();
+JPanel Panda2 = new JPanel();
+JButton Panda3 = new JButton();
+JTextField answer = new JTextField(20);
+Panda3.addActionListener(this);
+Panda2.add(answer);
+Panda2.add(Panda3);
+Panda1.add(Panda2);
+Panda1.pack();
 	}
 	String convert(String input) {
 	    if(input.length() != 8){
@@ -26,6 +40,11 @@ String bob=convert(invalid);
 	        JOptionPane.showMessageDialog(null, "Enter a binary, silly!!!");
 	        return "-";
 	    }
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
