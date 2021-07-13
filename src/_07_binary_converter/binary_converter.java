@@ -21,8 +21,15 @@ Panda2.add(answer);
 Panda2.add(Panda3);
 Panda1.add(Panda2);
 Panda1.pack();
+Panda1.setVisible(true);
 	}
-	String convert(String input) {
+	
+
+	
+	@Override
+	public actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		String convert(String input) {
 	    if(input.length() != 8){
 	        JOptionPane.showMessageDialog(null, "Enter 8 bits, silly!!!");
 	        return "-";
@@ -41,10 +48,6 @@ Panda1.pack();
 	        return "-";
 	    }
 	}
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
 	}
 }
 
