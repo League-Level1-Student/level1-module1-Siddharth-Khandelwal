@@ -5,31 +5,35 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class binary_converter implements ActionListener {
+	
+	JFrame Panda1 = new JFrame();
+	JPanel Panda2 = new JPanel();
+	JButton Panda3 = new JButton("Click Me to Convert");
+	JTextField answer = new JTextField(20);
+	JLabel label = new JLabel();
 	void setup() {
 
-JFrame Panda1 = new JFrame();
-JPanel Panda2 = new JPanel();
-JButton Panda3 = new JButton();
-JTextField answer = new JTextField(20);
+
+Panda1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 Panda3.addActionListener(this);
 Panda2.add(answer);
 Panda2.add(Panda3);
 Panda1.add(Panda2);
-Panda1.pack();
+
+Panda2.add(label);
 Panda1.setVisible(true);
+Panda1.pack();
 	}
 	
 
-	
-	@Override
-	public actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		String convert(String input) {
+
+	String convert(String input) {
 	    if(input.length() != 8){
 	        JOptionPane.showMessageDialog(null, "Enter 8 bits, silly!!!");
 	        return "-";
@@ -48,6 +52,19 @@ Panda1.setVisible(true);
 	        return "-";
 	    }
 	}
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// get text from JTextField
+		String hello = answer.getText();
+		// call the convert method
+		String result = convert(hello);
+		//display the result
+		label.setText(result);
+		Panda1.pack();
 	}
+	
 }
 
